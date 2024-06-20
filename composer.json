@@ -1,0 +1,30 @@
+{
+    "name": "phpdominicana/lightwave",
+    "description": "Simple php starter kit",
+    "autoload": {
+        "psr-4": {
+            "Phpdominicana\\Lightwave\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fermin",
+            "email": "masterfermin02@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "~8.3",
+        "symfony/dotenv": "^7.1",
+        "pimple/pimple": "^3.5",
+        "symfony/routing": "^7.1",
+        "symfony/http-foundation": "^7.1"
+    }
+}
