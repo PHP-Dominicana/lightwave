@@ -24,6 +24,7 @@ To add new routes, you need to edit the `src/Providers/RouteServiceProvider` cla
 Exammples:
 
 ```php
+$app->get('hello', new Route('/hello/{name}', ['_controller' => [HelloController::class, 'index']]));
 $app->get('home',
             new Route(
                 '/',
