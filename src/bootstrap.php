@@ -2,31 +2,27 @@
 
 namespace Phpdominicana\Lightwave;
 
+use Dotenv\Dotenv;
 use Phpdominicana\Lightwave\Controllers\HelloController;
 use Phpdominicana\Lightwave\Controllers\HomeController;
-use Phpdominicana\Lightwave\Providers\AppServiceProvider;
-use Symfony\Component\Dotenv\Dotenv;
 use Pimple\Container;
-use Pimple\Psr11\Container as PsrContainer;
+use Pimple\Psr11\Container as Psr11Container;
+use Symfony\Component\Routing\Route;
 
 require __DIR__ . '/../vendor/autoload.php';
 
 error_reporting(E_ALL);
 
-$dotenv = new Dotenv();
-$dotenv->load(__DIR__.'/../.env');
+$dotenv = Dotenv::createImmutable(dirName(__DIR__) );
+$dotenv->load();
 
 $container = new Container();
-$psrContainer = new PsrContainer($container);
 $app = new Application(
-    [
-        AppServiceProvider::class,
-    ],
-    $psrContainer,
+    $container,
     Config::makeFromDir(__DIR__ . '/Config/'));
 
-$app->get('helloWorld', '/hello/{name}', ['_controller' => [HelloController::class, 'index']]);
-$app->get('home', '/', ['_controller' => [HomeController::class, 'index']]);
+$app->get('hello', new Route('/hello/{name}', ['_controller' => [HelloController::class, 'index']]));
+$app->get('home', new Route('/', ['_controller' => [HomeController::class, 'index'], 'container' => new Psr11Container($container)]));
 
 $container['app'] = fn () => $app;
 

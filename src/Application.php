@@ -3,7 +3,7 @@
 namespace Phpdominicana\Lightwave;
 
 use ReflectionClass;
-use Pimple\Psr11\Container;
+use Pimple\Container;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RequestContext;
@@ -22,12 +22,11 @@ class Application
     protected RouteCollection $routes;
 
     public function __construct(
-        array $providers,
         Container $injector,
         Config $config
     )
     {
-        $this->providers = $providers;
+        $this->providers = $config->get('App.providers');
         $this->injector = $injector;
         $this->config = $config;
         $this->routes = new RouteCollection();
@@ -38,9 +37,8 @@ class Application
         return $this->injector;
     }
 
-    public function get(string $name, string $path = '/', array $action = []): void
+    public function get(string $name, Route $route): void
     {
-        $route = new Route($path, $action);
         $this->routes->add($name, $route);
     }
 

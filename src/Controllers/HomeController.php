@@ -2,12 +2,15 @@
 
 namespace Phpdominicana\Lightwave\Controllers;
 
+use Phpdominicana\Lightwave\Application;
+use Pimple\Psr11\Container;
 use Symfony\Component\HttpFoundation\Response;
 
-class HomeController
+readonly class HomeController
 {
-    public static function index(): Response
+    public static function index(Container $container): Response
     {
-        return new Response('Hello World');
+        $view = $container->get('view');
+        return new Response($view->render('welcome.twig'));
     }
 }

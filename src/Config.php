@@ -2,6 +2,8 @@
 
 
 namespace Phpdominicana\Lightwave;
+use Illuminate\Support\Arr;
+
 class Config
 {
     private array $settings;
@@ -33,6 +35,6 @@ class Config
 
     public function get(string $key)
     {
-        return $this->settings[$key] ?? null;
+        return Arr::get($this->settings, $key);
     }
 }
