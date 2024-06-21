@@ -28,7 +28,6 @@
         "twig/twig": "^3.10",
         "illuminate/support": "^11.11",
         "phpoption/phpoption": "^1.9",
-        "vlucas/phpdotenv": "^5.6",
-        "illuminate/routing": "^11.11"
+        "vlucas/phpdotenv": "^5.6"
     }
 }
