@@ -21,9 +21,6 @@ $app = new Application(
     $container,
     Config::makeFromDir(__DIR__ . '/Config/'));
 
-$app->get('hello', new Route('/hello/{name}', ['_controller' => [HelloController::class, 'index']]));
-$app->get('home', new Route('/', ['_controller' => [HomeController::class, 'index'], 'container' => new Psr11Container($container)]));
-
 $container['app'] = fn () => $app;
 
 $app->run();

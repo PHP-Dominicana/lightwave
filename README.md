@@ -17,3 +17,29 @@ To start the PHP native server, run the following command:
 ```shell
 sh server.sh
 ```
+
+## Add new routes
+To add new routes, you need to edit the `src/Providers/RouteServiceProvider` class.
+
+Exammples:
+
+```php
+$app->get('home',
+            new Route(
+                '/',
+                [
+                    '_controller' => [HomeController::class, 'index'],
+                    'container' => new Psr11Container($app->getInjector())
+                ]
+            )
+        );
+$app->post('create_user',
+            new Route(
+                '/users',
+                [
+                    '_controller' => [UserController::class, 'store'],
+                    'container' => new Psr11Container($app->getInjector())
+                ]
+            )
+        );
+```

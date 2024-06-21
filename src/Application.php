@@ -39,17 +39,26 @@ class Application
 
     public function get(string $name, Route $route): void
     {
+        $route->setMethods(['GET', 'HEAD']);
         $this->routes->add($name, $route);
     }
 
-    public function post()
+    public function post(string $name, Route $route)
     {
-
+        $route->setMethods(['POST', 'HEAD']);
+        $this->routes->add($name, $route);
     }
 
-    public function put()
+    public function put(string $name, Route $route)
     {
+        $route->setMethods(['PUT', 'HEAD']);
+        $this->routes->add($name, $route);
+    }
 
+    public function delete(string $name, Route $route)
+    {
+        $route->setMethods(['DELETE', 'HEAD']);
+        $this->routes->add($name, $route);
     }
 
     public function getConfig(): Config

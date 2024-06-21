@@ -29,5 +29,6 @@ return [
     'providers' => [
         \Phpdominicana\Lightwave\Providers\AppServiceProvider::class,
        \Phpdominicana\Lightwave\Providers\TwigServiceProvider::class,
+         \Phpdominicana\Lightwave\Providers\RouteServiceProvider::class,
     ],
 ];
