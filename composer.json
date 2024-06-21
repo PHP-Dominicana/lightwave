@@ -1,6 +1,13 @@
 {
     "name": "phpdominicana/lightwave",
     "description": "Simple php starter kit",
+    "keywords": [
+        "PHPDominicana",
+        "Lightwave",
+        "starter kit"
+    ],
+    "homepage": "https://github.com/PHP-Dominicana/lightwave",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Phpdominicana\\Lightwave\\": "src/"
