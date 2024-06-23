@@ -44,3 +44,38 @@ $app->post('create_user',
             )
         );
 ```
+
+## How to connect to a database using eloquent ORM
+
+Install eloquent ORM
+
+```shell
+composer require illuminate/database
+```
+
+Add the EloquenServiceProvider to the `src/Providers/AppServiceProvider` class to the config/app.php file in the `providers` array.
+
+```php
+'providers' => [
+        \Phpdominicana\Lightwave\Providers\AppServiceProvider::class,
+       \Phpdominicana\Lightwave\Providers\TwigServiceProvider::class,
+         \Phpdominicana\Lightwave\Providers\RouteServiceProvider::class,
+         Illuminate\Database\Eloquent\Providers\EloquentServiceProvider::class
+    ],
+```
+
+Then you can create you model and extend the `Illuminate\Database\Eloquent\Model` class.
+
+```php
+<?php
+ 
+namespace Phpdominicana\Lightwave\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
+{
+    protected $table = 'users';
+    protected $fillable = ['name', 'email', 'password'];
+}
+```

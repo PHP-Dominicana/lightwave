@@ -3,11 +3,7 @@
 namespace Phpdominicana\Lightwave;
 
 use Dotenv\Dotenv;
-use Phpdominicana\Lightwave\Controllers\HelloController;
-use Phpdominicana\Lightwave\Controllers\HomeController;
 use Pimple\Container;
-use Pimple\Psr11\Container as Psr11Container;
-use Symfony\Component\Routing\Route;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -19,7 +15,8 @@ $dotenv->load();
 $container = new Container();
 $app = new Application(
     $container,
-    Config::makeFromDir(__DIR__ . '/Config/'));
+    Config::makeFromDir(dirName(__DIR__ ) . '/config/')
+);
 
 $container['app'] = fn () => $app;
 

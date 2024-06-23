@@ -5,6 +5,7 @@ return [
     'database' => [
         'driver' => env('DB_DRIVER','sqlite'),
         'mysql' => [
+            'driver' => 'mysql',
             'DB_server'     => env( 'DB_HOST','127.0.0.1'),
             'DB_port'       => env('DB_PORT', '3306'),
             'DB_user'       => env('DB_USER','root'),

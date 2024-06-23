@@ -26,7 +26,7 @@ class Application
         Config $config
     )
     {
-        $this->providers = $config->get('App.providers');
+        $this->providers = $config->get('app.providers');
         $this->injector = $injector;
         $this->config = $config;
         $this->routes = new RouteCollection();
