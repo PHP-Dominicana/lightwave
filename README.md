@@ -10,6 +10,11 @@ The next step assumes that composer is available in your PATH
 composer create-project phpdominicana/lightwave [project-name]
 cd [project-name]
 ```
+Copy the .env.example file to .env and update the database connection settings.
+
+```shell
+cp .env.example .env
+```
 
 ## Usage with PHP native server
 To start the PHP native server, run the following command:
