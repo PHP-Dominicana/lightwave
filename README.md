@@ -60,7 +60,7 @@ Add the EloquenServiceProvider to the `src/Providers/AppServiceProvider` class t
         \Phpdominicana\Lightwave\Providers\AppServiceProvider::class,
        \Phpdominicana\Lightwave\Providers\TwigServiceProvider::class,
          \Phpdominicana\Lightwave\Providers\RouteServiceProvider::class,
-         Illuminate\Database\Eloquent\Providers\EloquentServiceProvider::class
+         \Phpdominicana\Lightwave\Providers\EloquentServiceProvider::class
     ],
 ```
 
