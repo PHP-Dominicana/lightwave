@@ -1,0 +1,16 @@
+{
+  "resources/css/main.css": {
+    "file": "css/bundle-CxpEt_uu.css",
+    "src": "resources/css/main.css",
+    "isEntry": true
+  },
+  "resources/js/main.js": {
+    "file": "js/bundle-BWbAHYWc.js",
+    "name": "main",
+    "src": "resources/js/main.js",
+    "isEntry": true,
+    "css": [
+      "css/bundle-CxpEt_uu.css"
+    ]
+  }
+}

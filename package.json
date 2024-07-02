@@ -1,0 +1,21 @@
+{
+  "name": "lightwave",
+  "version": "1.0.0",
+  "description": "This is a simple PHP starter kit created by the PHP dominicana community. It is designed to help you get started with PHP development quickly. It includes a simple web server, a simple router It is designed to be simple and easy to use.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.3.2",
+    "vite-plugin-live-reload": "^3.0.3"
+  }
+}
