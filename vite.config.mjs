@@ -5,8 +5,6 @@ import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
 import liveReload from "vite-plugin-live-reload";
 
-console.log(process.env);
-
 const refreshPaths = [
   "resources/views/**",
   "resources/css/**",
