@@ -74,7 +74,7 @@ trait AssetResolver
      */
     private function generateDevjsTag(): string
     {
-        return '<script type="module" src="http://localhost:5173/resources/js/main.js"></script>';
+        return '<script type="module" src="http://localhost:'.env('VITE_SERVER_PORT').'/resources/js/main.js"></script>';
     }
 
     /**
@@ -87,7 +87,7 @@ trait AssetResolver
         $url = $this->getCssBundleUrl();
 
         if (env('APP_ENV') === 'development') {
-            return $this->generateCssTag('http://localhost:5173/resources/css/main.css');
+            return $this->generateCssTag('http://localhost:'.env('VITE_SERVER_PORT').'/resources/css/main.css');
         }
 
         $linkTag = $this->generateCssTag($url);
