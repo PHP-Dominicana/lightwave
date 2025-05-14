@@ -27,6 +27,11 @@
             "email": "masterfermin02@gmail.com"
         }
     ],
+     "scripts": {
+        "post-install-cmd": [
+            "@php -r \"file_exists('.env') || copy('.env-exmaple', '.env');\""
+        ]
+    },
     "require": {
         "php": "~8.3",
         "pimple/pimple": "^3.5",
