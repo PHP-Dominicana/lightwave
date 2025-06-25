@@ -1,45 +1,45 @@
 {
-    "name": "phpdominicana/lightwave",
-    "description": "Simple php starter kit",
-    "keywords": [
-        "PHPDominicana",
-        "Lightwave",
-        "starter kit"
-    ],
-    "homepage": "https://github.com/PHP-Dominicana/lightwave",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Phpdominicana\\Lightwave\\": "src/"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+  "name": "phpdominicana/lightwave",
+  "description": "Simple php starter kit",
+  "keywords": [
+    "PHPDominicana",
+    "Lightwave",
+    "starter kit"
+  ],
+  "homepage": "https://github.com/PHP-Dominicana/lightwave",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Phpdominicana\\Lightwave\\": "src/"
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Test\\": "tests/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Fermin",
-            "email": "masterfermin02@gmail.com"
-        }
-    ],
-     "scripts": {
-        "post-install-cmd": [
-            "@php -r \"file_exists('.env') || copy('.env-exmaple', '.env');\""
-        ]
-    },
-    "require": {
-        "php": "~8.3",
-        "pimple/pimple": "^3.5",
-        "symfony/routing": "^7.1",
-        "symfony/http-foundation": "^7.1",
-        "twig/twig": "^3.10",
-        "illuminate/support": "^11.11",
-        "phpoption/phpoption": "^1.9",
-        "vlucas/phpdotenv": "^5.6"
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\": "tests/"
     }
+  },
+  "authors": [
+    {
+      "name": "Fermin",
+      "email": "masterfermin02@gmail.com"
+    }
+  ],
+  "scripts": {
+    "post-install-cmd": [
+      "@php -r \"file_exists('.env') || copy('.env-exmaple', '.env');\""
+    ]
+  },
+  "require": {
+    "php": "~8.4",
+    "pimple/pimple": "^3.5",
+    "symfony/routing": "^7.3.0",
+    "symfony/http-foundation": "^7.3",
+    "twig/twig": "^3.21",
+    "illuminate/support": "^12.19",
+    "phpoption/phpoption": "^1.9",
+    "vlucas/phpdotenv": "^5.6"
+  }
 }
