@@ -13,9 +13,17 @@ $dotenv = Dotenv::createImmutable(dirName(__DIR__) );
 $dotenv->load();
 
 $container = new Container();
+
+$config = Config::makeFromDir(dirName(__DIR__ ) . '/config/');
+$router = new Router(); // Create Router instance
+
+$container['config'] = $config;
+$container['router'] = $router;
+
 $app = new Application(
     $container,
-    Config::makeFromDir(dirName(__DIR__ ) . '/config/')
+    $config,
+    $router // Pass Router instance to Application
 );
 
 $container['app'] = fn () => $app;
